@@ -6,7 +6,7 @@ import Templates from './components/Templates'
 function App() {
   return (
     <NestedListsContextProvider>
-      <main className="App">
+      <main className="app">
         <Templates/>
       </main>
 
