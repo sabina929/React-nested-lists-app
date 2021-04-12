@@ -16,9 +16,9 @@ main.app{
     grid-auto-flow: column;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
+    width: 95%;
     height: 96%;
-    padding: 48px;
+    // padding: 48px;
     overflow-x: scroll;
     border-radius: 5px;
     
@@ -31,7 +31,7 @@ main.app{
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
         // background: rgb(116, 54, 223);
-        background: rgb(200, 192, 214);
+        background: rgb(214, 206, 228);
     }
 
 
@@ -59,11 +59,11 @@ main.app{
             resize: none;
             border: none;
             // border: 1px solid blue;
-            border-bottom: 1px solid blue;
+            border-bottom: 1px solid #7436df;
             padding: 8px 6px 2px 6px;
             outline: none;
             font-size: 1.2rem;
-            color: blue;
+            color: #7436df;
             background-color: white;
             transition: all .3s ease;
             
@@ -74,7 +74,7 @@ main.app{
         
         input::placeholder {
             opacity: .4;
-            color: blue;
+            color: #7436df;
         }
       }
 
@@ -99,7 +99,9 @@ main.app{
         
         &::-webkit-scrollbar-thumb {
             border-radius: 10px;
-            background: blue;
+            // background: #7436df;
+            // background:rgb(200, 192, 214);
+            background:rgb(214, 206, 228);
         }
 
         li{
@@ -116,10 +118,13 @@ main.app{
           cursor: pointer;
           
           &:nth-child(n){
-              background-color: rgb(68, 0, 255);
+              // background-color: rgb(68, 0, 255);
+              // background-color: rgb(111, 35, 241);
+              background-color:#8a00ff;;
           }
           &:nth-child(2n){
               background-color: rgb(255, 0, 255);
+              // background-color: #ff93a5;
           }
 
 
@@ -200,24 +205,25 @@ main.app{
       justify-content: center;
       align-items: center;
       background-color: white;
-      box-shadow:0 1px 16px 0px rgba(0, 60, 255, 0.05);
+      box-shadow:0 1px 16px 0px rgba(0, 60, 255, 0.1);
       border-radius: 6px;
       transition: all .2s ease;
-      color: blue;
+      color: #7436df;
       font-size: 2rem;
       cursor: pointer;
       outline: none;
-
+      
       &:active{
         transform: scale(.6);
-    }
-    
+      }
+      
     }
 
     button.create-template{
       position: absolute;
-      top: 24px;
-      right: 24px;
+      top: 36px;
+      right: 36px;
+      box-shadow:0 1px 16px 0px rgba(0, 60, 255, 0.05);
     }
   }
 }
