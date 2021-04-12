@@ -5,13 +5,20 @@ import Template from '../components/Template'
 
 const Templates = () => {
 
-    const {templates,handleChange} = useContext(NestedListsContext)
+    const {templates,handleChange, createTemplate, addItem} = useContext(NestedListsContext)
 
     return (
         <section>
             
-            {templates}
-            <Template templates={templates} handleChange={handleChange}/>
+            {
+            templates.map(template=>{
+                const {templateID, inputValue, items} = template
+                return (
+                    <Template key={templateID} inputValue={inputValue} inputID={templateID} items={items} handleChange={handleChange} addItem={addItem}/>
+                )
+            })
+            }
+            <button type='button' onClick={createTemplate}>+</button>
         </section>
     )
 }
