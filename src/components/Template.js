@@ -1,14 +1,26 @@
 import React from 'react'
 
-const Template = ({handleChange, items, inputValue,inputID,addItem, checkToggle}) => {
+const Template = ({handleChange, items, inputValue,inputID, templateName, addItem, checkToggle, removeTemplate, editItem, removeItem, unCheckAll}) => {
     return (
         <article>
-            <form id={`${inputID}formid`} onSubmit={addItem}>
-                <input type="text" id={`${inputID}inputid`} placeholder="enter smth..." name="task" required onChange={handleChange} value={inputValue}></input>
-                <button type='submit'>+</button>
-            </form>
-
-           <ul className="items-container">
+            <div className='template-heading'>
+                    <h2>{templateName}</h2>
+                    <button type="button" className='remove-template' onClick={()=>removeTemplate(inputID)}>-</button>
+            </div>
+            <div className="template-body">
+                <form id={`${inputID}formid`} onSubmit={addItem}>
+                    <input type="text" id={`${inputID}inputid`} placeholder="enter smth..." name="task" required onChange={handleChange} value={inputValue}></input>
+                    <div className="add-uncheck">
+                        <div className="add-button">
+                            <button type="submit">+</button>
+                        </div>
+                        <div className="uncheck-button" onClick={()=>unCheckAll(inputID)}>
+                            <i className="fas fa-sync-alt"></i>
+                        </div>
+                    </div>
+                </form>
+                
+                <ul className="items-container">
                {
                    items.map(item=>{
                        return (
@@ -26,12 +38,20 @@ const Template = ({handleChange, items, inputValue,inputID,addItem, checkToggle}
                 
                                 </label> 
                             </div> 
+
+                            <div className="edit-remove">
+                                <i className="fas fa-pencil-alt" onClick={()=>editItem(item.itemID,inputID)}></i>
+                                <i className="fas fa-trash" onClick={()=>removeItem(item.itemID, inputID)}></i>
+                            </div>   
                        
                         </li>
                        )
                    })
                }
            </ul>
+            </div>
+         
+    
         </article>
     )
 }
