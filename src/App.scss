@@ -565,17 +565,37 @@ main.app{
             // height: 40px;
             height: auto;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            font-size: 18px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
             border-radius: 5px;
-            padding: 10px 10px;
+            padding: 16px 10px;
             cursor: pointer;
             background-color: #ffffff;
             box-shadow: 0 4px 8px 0px rgba($blue2, 0.1);
             transition: all .2s ease;
             text-transform: capitalize;
+
+            p{
+              line-height: 16px;
+            }
+
+
+            &>div{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              opacity: 0.6;
+              font-size: 14px;
+              width: 40px;
+              height: 16px;
+              i{
+                font-size: 15px;
+              }
+            }
+            
 
             &:not(:last-child){
               margin-bottom: 10px;

@@ -20,9 +20,16 @@ const CreateTemplateModal = () => {
                       
                         {
                             savedTemplates.map((savedTemplate,index) => {
-                                const {templateID,templateName} = savedTemplate
+                                const {templateID,templateName, items} = savedTemplate
+                                const checkedItems = items.filter(item => item.isChecked === true)
                                 return (
-                                    <li key={index} onClick={()=>createFromSavedTemplate(templateID)}>{templateName}</li>
+                                    <li key={index} onClick={()=>createFromSavedTemplate(templateID)}>
+                                        <p>{templateName}</p>
+                                        <div>
+                                            <i className="far fa-check-square"></i>
+                                            {checkedItems.length}/{items.length}
+                                        </div>
+                                    </li>
                                 )
                             })
                         }
