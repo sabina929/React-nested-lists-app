@@ -1,4 +1,4 @@
-# 🗒️ React Routine App
+# 🗒️ React Routines App
 
 You can create your own routines by using this app.
 <br />
