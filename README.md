@@ -1,6 +1,6 @@
-# React Nested Routine Lists App
+# React Routine App
 
-You can create your own routine templates by using this app 
+You can create your own routines by using this app.
 
 ## Features
 
@@ -8,6 +8,6 @@ You can create your own routine templates by using this app
 - add steps/to-dos
 - edit steps/to-dos
 - remove steps/to-dos
-- remove a template
-- save a template
-- create from saved templates
+- remove a routine
+- save a routine
+- create a routine from saved templates
