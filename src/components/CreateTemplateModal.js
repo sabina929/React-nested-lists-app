@@ -1,6 +1,5 @@
 import React, {useContext} from 'react'
 import {NestedListsContext} from '../context/NestedListsContext'
-// import cleaningIcon from '../cleaning-icon.svg'
 
 const CreateTemplateModal = () => {
     
