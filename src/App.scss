@@ -312,9 +312,8 @@ main.app{
         
         &::-webkit-scrollbar-thumb {
             border-radius: 10px;
-            // background: #7436df;
-            // background:rgb(200, 192, 214);
-            background:rgb(214, 206, 228);
+            // background:rgb(214, 206, 228);
+            background:rgb(222, 217, 231);
         }
 
         li{
@@ -329,16 +328,6 @@ main.app{
           border-radius: 5px;
           padding: 10px 0;
           cursor: pointer;
-          
-          &:nth-child(n){
-              // background-color: rgb(68, 0, 255);
-              // background-color: rgb(111, 35, 241);
-              background-color:$violent;
-          }
-          &:nth-child(2n){
-              background-color: $magenta;
-              // background-color: #ff93a5;
-          }
 
 
           .check-task{
@@ -414,13 +403,62 @@ main.app{
             align-items: center;
             margin-right: 6px;
              i{
-                color: #f7f5ff;
+                // color: #f7f5ff;
                 cursor: pointer;
                 font-size: .95rem;
                 transition: all .2s ease;
                 &:active{
                     transform: scale(.9);
                 }
+            }
+          }
+
+          &:nth-child(n){
+              // background-color:$violent;
+              background-color:rgba($violent,0.09);
+              .check-task{
+                
+                input[type=checkbox]{
+                  color:$violent;
+                }
+                label{
+                  color:$violent;
+                    svg{
+                      path{
+                        fill: $violent;
+                      }
+                    }
+                }
+              }
+
+            .edit-remove {
+              i{
+                  color:$violent;
+              }
+            }
+          }
+          &:nth-child(2n){
+              background-color: $magenta;
+              background-color:rgba($magenta,0.09);
+              .check-task{
+                
+                input[type=checkbox]{
+                  color:$magenta;
+                }
+                label{
+                  color:$magenta;
+                    svg{
+                      path{
+                        fill: $magenta;
+                      }
+                    }
+                }
+              }
+
+            .edit-remove {
+              i{
+                  color:$magenta;
+              }
             }
           }
         } 

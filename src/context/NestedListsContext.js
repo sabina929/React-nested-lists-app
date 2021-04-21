@@ -37,6 +37,7 @@ const NestedListsContextProvider = (props) => {
 
         let mappedTemplates = filteredTemplates[0].items.map(item=>{
             item.itemID = uuidv4()    
+            // item.isChecked = false
                 
             return item
         })
