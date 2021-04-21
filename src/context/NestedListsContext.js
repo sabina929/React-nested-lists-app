@@ -30,24 +30,26 @@ const NestedListsContextProvider = (props) => {
     }
 
     const createFromSavedTemplate = (id) => {
-        let copyOfTemplatesArr = savedTemplates.slice();
+        let copyOfTemplatesArr = JSON.parse(JSON.stringify(savedTemplates))
         let filteredTemplates = copyOfTemplatesArr.filter(template => template.templateID ===id)
-        // let itemsCopy = filteredTemplates[0].items.slice()
-        // console.log([...itemsCopy])
 
-        let mappedTemplates = filteredTemplates[0].items.map(item=>{
-            item.itemID = uuidv4()    
-            // item.isChecked = false
-                
-            return item
+        // console.log(filteredTemplates)
+
+        let mappedFilteredTemplates = filteredTemplates.map(template=>{
+            for(let item of template.items) {
+                    // item.isChecked = false
+                    // item.itemID = Math.random()
+                    item.itemID = uuidv4()  
+            }
+            return template
         })
 
-
+        
         const newTemplate = {
             templateID: uuidv4(),
-            templateName: filteredTemplates[0].templateName,
-            inputValue: filteredTemplates[0].inputValue,
-            items:[...mappedTemplates]
+            templateName: mappedFilteredTemplates[0].templateName,
+            inputValue: mappedFilteredTemplates[0].inputValue,
+            items:[...mappedFilteredTemplates[0].items]
         }
 
        setTemplates(prev => {
