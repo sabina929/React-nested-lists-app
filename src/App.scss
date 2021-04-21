@@ -621,10 +621,16 @@ main.app{
           width: 100%;
           height: 142px;
           margin-top: 0px;
-          overflow-y: scroll;
           list-style: none;
           padding: 10px;
-          border-radius: 5px;
+          border-radius: 6px;
+          
+          &.empty{
+            overflow-y: hidden;
+          }
+          &.not-empty{
+            overflow-y: scroll;
+          }
 
           &::-webkit-scrollbar {
             width: 8px;
