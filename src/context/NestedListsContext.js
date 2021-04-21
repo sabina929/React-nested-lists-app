@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react'
+import React, {createContext, useState, useEffect} from 'react'
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -11,7 +11,29 @@ const NestedListsContextProvider = (props) => {
     const [isEditing, setIsEditing] = useState(false)
     const [editingItemID, seteditingItemID] = useState('')
 
+    // CREATE TEMPLATE 
+    const createTemplate = (e) => {
+        e.preventDefault()
+        const newTemplate = {
+            templateID: uuidv4(),
+            templateName: routineName,
+            inputValue: '',
+            items:[]
+        }
 
+        setTemplates(prevTemplates => {
+            return [...prevTemplates,newTemplate]
+        })
+
+        setRoutineName('')
+    }
+    // HANDLE INPUT VALUE CHANGE
+    const handleChangeRoutineName = (e) => {
+        let inputElem = {
+            value: e.target.value
+        }
+        setRoutineName(inputElem.value)
+    }
 
     // HANDLE INPUT VALUE CHANGE
     const handleChange = (e) => {
@@ -91,6 +113,7 @@ const NestedListsContextProvider = (props) => {
           )
 
           setTemplates(mappedTemplates)
+        
         }
       
     }
@@ -129,9 +152,7 @@ const NestedListsContextProvider = (props) => {
         let mappedTemplates = copyOfTemplatesArr.map(template=>{
                 if (template.templateID === id) {
                     for(let item of template.items) {
-                        
                             item.isChecked = false
-                        
                     }
                 }
             return template
@@ -140,28 +161,7 @@ const NestedListsContextProvider = (props) => {
 
           setTemplates(mappedTemplates)
     }
-    // CREATE TEMPLATE 
-    const createTemplate = (e) => {
-        e.preventDefault()
-        const newTemplate = {
-            templateID: uuidv4(),
-            templateName: routineName,
-            inputValue: '',
-            items:[]
-        }
-
-        setTemplates(prevTemplates => {
-            return [...prevTemplates,newTemplate]
-        })
-        setRoutineName('')
-    }
-    // HANDLE INPUT VALUE CHANGE
-    const handleChangeRoutineName = (e) => {
-        let inputElem = {
-            value: e.target.value
-        }
-        setRoutineName(inputElem.value)
-    }
+   
 
     // TOGGLE MODAL
     const showModal = ()=> {
@@ -211,7 +211,21 @@ const NestedListsContextProvider = (props) => {
         setIsEditing(true)
         setTemplates(mappedTemplates)
     }
+
+    // STORE DATA IN LOCALSTORAGE
+    useEffect(() => {
+        const localTemplates = localStorage.getItem('localTemplates')
+
+        if (localTemplates) {
+            setTemplates(JSON.parse(localTemplates));
+        } 
+    }, [])
  
+    useEffect(() => {
+          localStorage.setItem('localTemplates',JSON.stringify(templates))
+    },)
+
+   
     return (
         <NestedListsContext.Provider value={{templates, createTemplate, handleChange, addItem, checkToggle, unCheckAll, editItem, removeItem, handleChangeRoutineName, routineName, isModalOpened, showModal, removeTemplate}}>
             {props.children}
