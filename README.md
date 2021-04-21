@@ -9,5 +9,5 @@ You can create your own routines by using this app.
 - edit steps/to-dos
 - remove steps/to-dos
 - remove a routine
-- save a routine
+- save a routine as a template
 - create a routine from saved templates
