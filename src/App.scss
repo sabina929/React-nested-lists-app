@@ -178,9 +178,9 @@ main.app{
               outline: none;
               line-height: 16px;
                 &:active{
-                    transform: scale(.6);
+                  transform: scale(.6);
                 }
-          
+                          
             }
         }
         }
@@ -355,6 +355,11 @@ main.app{
       box-shadow:0 10px 24px 3px rgba($blue2, 0.2);
       color: $white;
       background-color: $blue2;
+      
+      &:hover,&:focus{                  
+        background-color: $magenta;
+        box-shadow:0 10px 24px 3px rgba($magenta, 0.2);
+      }
 
       @media only screen and (max-width: 500px) {
         top: 20px;
