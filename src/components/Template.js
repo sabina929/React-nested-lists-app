@@ -6,8 +6,8 @@ const Template = ({handleChange, items, inputValue,inputID, templateName, addIte
             <div className='template-heading'>
                     <h2>{templateName}</h2>
                     <div>
-                    <button type="button" className='save-template' onClick={()=>saveTemplate(inputID)} title="save template"><i className="far fa-save"></i></button>
-                    <button type="button" className='remove-template' onClick={()=>removeTemplate(inputID)} title="delete template"><i className="far fa-minus-square"></i></button>
+                    <button type="button" className='save-template' onClick={()=>saveTemplate(inputID)}><i className="far fa-save"></i></button>
+                    <button type="button" className='remove-template' onClick={()=>removeTemplate(inputID)}><i className="far fa-minus-square"></i></button>
                     </div>
             </div>
             <div className="template-body">
