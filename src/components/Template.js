@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Template = ({handleChange, items, inputValue,inputID, templateName, addItem, checkToggle, saveTemplate,removeTemplate, editItem, removeItem, unCheckAll}) => {
+const Template = ({handleChange, items, inputValue,inputID, templateName, addItem, checkToggle, saveTemplate, removeTemplate, editItem, removeItem, unCheckAll}) => {
     return (
         <article>
             <div className='template-heading'>

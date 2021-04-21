@@ -201,7 +201,7 @@ const NestedListsContextProvider = (props) => {
        let copyOfSavedTemplatesArr = savedTemplates.slice();
        let filteredSavedTemplates = copyOfSavedTemplatesArr.filter(template => template.templateID !==id)
        setSavedTemplates(filteredSavedTemplates)
-       
+
        let copyOfTemplatesArr = templates.slice();
        let filteredTemplates = copyOfTemplatesArr.filter(template => template.templateID ===id)
 
@@ -210,6 +210,10 @@ const NestedListsContextProvider = (props) => {
            return [...prev, filteredTemplates[0]]
        })
     }
+    // DELETE ALL SAVED TEMLATES
+    const deleteAllSavedTemplates = ()=> {
+        setSavedTemplates([])
+     }
     // REMOVE TEMPLATE
     const removeTemplate = (id)=> {
        let copyOfTemplatesArr = templates.slice();
@@ -281,7 +285,7 @@ const NestedListsContextProvider = (props) => {
 
    
     return (
-        <NestedListsContext.Provider value={{templates, createTemplate, handleChange, addItem, checkToggle, unCheckAll, editItem, removeItem, handleChangeRoutineName, routineName, isModalOpened, showModal, savedTemplates, saveTemplate, removeTemplate, createFromSavedTemplate}}>
+        <NestedListsContext.Provider value={{templates, createTemplate, handleChange, addItem, checkToggle, unCheckAll, editItem, removeItem, handleChangeRoutineName, routineName, isModalOpened, showModal, savedTemplates, saveTemplate, removeTemplate, createFromSavedTemplate, deleteAllSavedTemplates}}>
             {props.children}
         </NestedListsContext.Provider>
     )
