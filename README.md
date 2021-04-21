@@ -3,7 +3,7 @@
 You can create your own routines by using this app.
 
 
-<img align="center" alt="Autodesk Sketchbook" width="800px" src="https://user-images.githubusercontent.com/50209542/115592990-ff09af00-a2e4-11eb-8472-7ecc38334faf.PNG" />
+<img align="center" alt="Autodesk Sketchbook" width="500px" src="https://user-images.githubusercontent.com/50209542/115593483-9b33b600-a2e5-11eb-9926-c8bc3f2955b0.PNG" />
 
 ## Features
 
