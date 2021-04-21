@@ -6,6 +6,7 @@ export const NestedListsContext = createContext()
 
 const NestedListsContextProvider = (props) => {
     const [templates, setTemplates] = useState([])
+    const [savedTemplates, setSavedTemplates] = useState([])
     const [routineName, setRoutineName] = useState('')
     const [isModalOpened, setIsModalOpened] = useState(false)
     const [isEditing, setIsEditing] = useState(false)
@@ -27,6 +28,32 @@ const NestedListsContextProvider = (props) => {
 
         setRoutineName('')
     }
+
+    const createFromSavedTemplate = (id) => {
+        let copyOfTemplatesArr = savedTemplates.slice();
+        let filteredTemplates = copyOfTemplatesArr.filter(template => template.templateID ===id)
+        // let itemsCopy = filteredTemplates[0].items.slice()
+        // console.log([...itemsCopy])
+
+        let mappedTemplates = filteredTemplates[0].items.map(item=>{
+            item.itemID = uuidv4()    
+                
+            return item
+        })
+
+
+        const newTemplate = {
+            templateID: uuidv4(),
+            templateName: filteredTemplates[0].templateName,
+            inputValue: filteredTemplates[0].inputValue,
+            items:[...mappedTemplates]
+        }
+
+       setTemplates(prev => {
+           return [...prev, newTemplate]
+       })
+
+    }
     // HANDLE INPUT VALUE CHANGE
     const handleChangeRoutineName = (e) => {
         let inputElem = {
@@ -34,6 +61,7 @@ const NestedListsContextProvider = (props) => {
         }
         setRoutineName(inputElem.value)
     }
+    
 
     // HANDLE INPUT VALUE CHANGE
     const handleChange = (e) => {
@@ -168,6 +196,20 @@ const NestedListsContextProvider = (props) => {
        setIsModalOpened(!isModalOpened)
     }
 
+    // SAVE TEMPLATE
+    const saveTemplate = (id)=> {
+       let copyOfSavedTemplatesArr = savedTemplates.slice();
+       let filteredSavedTemplates = copyOfSavedTemplatesArr.filter(template => template.templateID !==id)
+       setSavedTemplates(filteredSavedTemplates)
+       
+       let copyOfTemplatesArr = templates.slice();
+       let filteredTemplates = copyOfTemplatesArr.filter(template => template.templateID ===id)
+
+
+       setSavedTemplates(prev => {
+           return [...prev, filteredTemplates[0]]
+       })
+    }
     // REMOVE TEMPLATE
     const removeTemplate = (id)=> {
        let copyOfTemplatesArr = templates.slice();
@@ -225,9 +267,21 @@ const NestedListsContextProvider = (props) => {
           localStorage.setItem('localTemplates',JSON.stringify(templates))
     },)
 
+
+    useEffect(()=>{
+        const localSavedTemplates = localStorage.getItem('localSavedTemplates')
+
+        if(localSavedTemplates){
+            setSavedTemplates(JSON.parse(localSavedTemplates))
+        }
+    },[])
+    useEffect(()=>{
+        localStorage.setItem('localSavedTemplates', JSON.stringify(savedTemplates))
+    })
+
    
     return (
-        <NestedListsContext.Provider value={{templates, createTemplate, handleChange, addItem, checkToggle, unCheckAll, editItem, removeItem, handleChangeRoutineName, routineName, isModalOpened, showModal, removeTemplate}}>
+        <NestedListsContext.Provider value={{templates, createTemplate, handleChange, addItem, checkToggle, unCheckAll, editItem, removeItem, handleChangeRoutineName, routineName, isModalOpened, showModal, savedTemplates, saveTemplate, removeTemplate, createFromSavedTemplate}}>
             {props.children}
         </NestedListsContext.Provider>
     )

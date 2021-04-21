@@ -6,7 +6,7 @@ import CreateTemplateModal from '../components/CreateTemplateModal'
 
 const Templates = () => {
 
-    const {templates,handleChange, addItem, checkToggle,isModalOpened, showModal, removeTemplate, editItem, removeItem, unCheckAll} = useContext(NestedListsContext)
+    const {templates,handleChange, addItem, checkToggle,isModalOpened, showModal, saveTemplate, removeTemplate, editItem, removeItem, unCheckAll} = useContext(NestedListsContext)
 
     return (
         <>
@@ -16,7 +16,7 @@ const Templates = () => {
                 templates.map(template=>{
                     const {templateID,templateName, inputValue, items} = template
                     return (
-                        <Template key={templateID} inputValue={inputValue} inputID={templateID} templateName={templateName} removeTemplate={removeTemplate} items={items} handleChange={handleChange} addItem={addItem} checkToggle={checkToggle} editItem={editItem} removeItem={removeItem} unCheckAll={unCheckAll}/>
+                        <Template key={templateID} inputValue={inputValue} inputID={templateID} templateName={templateName} saveTemplate={saveTemplate} removeTemplate={removeTemplate} items={items} handleChange={handleChange} addItem={addItem} checkToggle={checkToggle} editItem={editItem} removeItem={removeItem} unCheckAll={unCheckAll}/>
                     )
                 })
                 }
