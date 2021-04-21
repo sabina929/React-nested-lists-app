@@ -14,7 +14,7 @@ const CreateTemplateModal = () => {
                     <button type='submit' className="create-template">Create</button>
                 </form>
                 <div>
-                    <h3>Create from saved template</h3>
+                    <h3>Create from saved templates</h3>
 
                     <ul className="templates-container">
                       
