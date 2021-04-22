@@ -6,6 +6,7 @@ const AddTemplateButton = () => {
 
     return (
         <section className='btn-container'>
+            <h1>Daily Routines</h1>
             <button type='button' onClick={showModal} className="open-modal">+</button>
         </section>
     )
