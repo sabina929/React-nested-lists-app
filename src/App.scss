@@ -861,6 +861,31 @@ main.app{
           margin-right: 12px;
         }
       }
+
+      button.close-btn{
+        background-color: transparent;
+        width: 16px;
+        height: 16px;
+        box-shadow: none;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        // transform: translate(-50%,-50%);
+        border-radius:0px;
+        padding: 0px 0px;
+        font-size: 16px;
+        color: black;
+        flex-direction: column;
+        
+        i{
+          opacity: 0.3;
+          color: black;
+          font-size: 16px;
+          width: 16px;
+          height: 16px;
+        }
+
+      }
       
     }
 
