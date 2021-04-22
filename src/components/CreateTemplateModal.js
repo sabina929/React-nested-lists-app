@@ -16,7 +16,7 @@ const CreateTemplateModal = () => {
                 <div>
                     <h3>Create from saved templates</h3>
 
-                    <ul className={`saved-templates-container ${savedTemplates.length >= 3 ? 'not-empty' : 'empty'}`}>
+                    <ul className={`saved-templates-container ${savedTemplates.length >= 2 ? 'not-empty' : 'empty'}`}>
 
                         {
                             savedTemplates.length === 0 ? <p>Nothing here...</p> : null
