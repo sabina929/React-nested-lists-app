@@ -1,7 +1,9 @@
 $white: #ffffff;
 $blue: rgb(0, 60, 255);
-$blue2: #7436df;
-$violent: #8a00ff;
+// $blue2: #7436df;
+$blue2: #3639df;
+// $violent: #8a00ff;
+$violent: #3639df;
 $magenta: rgb(255, 0, 255);
 
 @keyframes fadeIn {
@@ -36,7 +38,7 @@ main.app{
     box-shadow:0 1px 16px 0px rgba($blue2, 0.1);
     border-radius: 6px;
     transition: all .2s ease;
-    color: #7436df;
+    color: $blue2;
     font-size: 2rem;
     cursor: pointer;
     outline: none;
@@ -138,7 +140,7 @@ main.app{
       
       div.template-heading{
         position: relative;
-        background-color: rgb(116, 54, 223);
+        background-color: $blue2;
         width:100%;
         height: 60px;
         border-top-left-radius: 8px;
@@ -347,7 +349,7 @@ main.app{
               box-shadow:0 4px 16px 1px rgba($blue2, 0.1);
               border-radius: 6px;
               transition: all .2s ease;
-              color: #7436df;
+              color: $blue2;
               font-size: 2rem;
               cursor: pointer;
               outline: none;
