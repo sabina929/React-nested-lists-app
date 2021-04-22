@@ -6,11 +6,11 @@ import CreateTemplateModal from '../components/CreateTemplateModal'
 
 const Templates = () => {
 
-    const {templates,handleChange, addItem, checkToggle,isModalOpened, showModal, saveTemplate, removeTemplate, editItem, removeItem, unCheckAll} = useContext(NestedListsContext)
+    const {templates,handleChange, addItem, checkToggle,isModalOpened, saveTemplate, removeTemplate, editItem, removeItem, unCheckAll} = useContext(NestedListsContext)
 
     return (
         <>
-            <section>
+            <section className='templates-container'>
             
                 {
                 templates.map(template=>{
@@ -19,12 +19,12 @@ const Templates = () => {
                         <Template key={templateID} inputValue={inputValue} inputID={templateID} templateName={templateName} saveTemplate={saveTemplate} removeTemplate={removeTemplate} items={items} handleChange={handleChange} addItem={addItem} checkToggle={checkToggle} editItem={editItem} removeItem={removeItem} unCheckAll={unCheckAll}/>
                     )
                 })
-                }
-                <button type='button' onClick={showModal} className="open-modal">+</button>
-        </section>
-        {
-            isModalOpened &&  <CreateTemplateModal/>
-        }
+            }
+                
+            </section>
+            {
+                isModalOpened &&  <CreateTemplateModal/>
+            }
         </>
  
     )

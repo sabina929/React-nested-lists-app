@@ -24,9 +24,54 @@ main.app{
   margin: 0px auto;
   width: 100vw;
   height: 100vh;
-  // border: 1px solid red;
+
+  button{
+    width: 36px;
+    height: 36px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow:0 1px 16px 0px rgba($blue2, 0.1);
+    border-radius: 6px;
+    transition: all .2s ease;
+    color: #7436df;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+    
+    &:active{
+      transform: scale(.6);
+    }
+    
+  }
+  section.btn-container{
+    width: 100%;
+    height: 36px;
+    button.open-modal{
+      position: absolute;
+      top: 36px;
+      right: 36px;
+      // box-shadow:0 1px 16px 0px rgba($blue2, 0.2);
+      box-shadow:0 10px 24px 3px rgba($blue2, 0.2);
+      color: $white;
+      background-color: $blue2;
+      
+      &:hover,&:focus{                  
+        background-color: $magenta;
+        box-shadow:0 10px 24px 3px rgba($magenta, 0.2);
+      }
+
+      @media only screen and (max-width: 500px) {
+        top: 20px;
+        right: 20px;
+      }
+    }
   
-  section{
+  }
+  
+  section.templates-container{
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 100%;
@@ -35,7 +80,7 @@ main.app{
     align-items: center;
     justify-content: flex-start;
     width: 95%;
-    height: 96%;
+    height: 86%;
     overflow-x: scroll;
     border-radius: 5px;
 
@@ -52,7 +97,6 @@ main.app{
     }
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        // background: rgb(116, 54, 223);
         background: rgb(214, 206, 228);
     }
 
@@ -472,27 +516,6 @@ main.app{
       }
     }
 
-    button{
-      width: 36px;
-      height: 36px;
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: white;
-      box-shadow:0 1px 16px 0px rgba($blue2, 0.1);
-      border-radius: 6px;
-      transition: all .2s ease;
-      color: #7436df;
-      font-size: 2rem;
-      cursor: pointer;
-      outline: none;
-      
-      &:active{
-        transform: scale(.6);
-      }
-      
-    }
     button.open-modal{
       position: absolute;
       top: 36px;
@@ -570,9 +593,9 @@ main.app{
       }
       @media only screen and (max-width: 500px) {
         padding: 24px;
-        width: 300px;
+        width: 360px;
       }
-      @media only screen and (max-width: 340px) {
+      @media only screen and (max-width: 420px) {
         width: 89vw;
       }
 
@@ -581,11 +604,11 @@ main.app{
       }
       form{
         height: auto;
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-
         margin-bottom: 40px;
 
         @media only screen and (max-width: 500px) {
@@ -654,6 +677,9 @@ main.app{
         justify-content: flex-start;
         align-items: flex-start;
         margin-bottom: 40px;
+        @media only screen and (max-width: 500px) {
+          margin-bottom: 24px;
+        }
 
         h3{
           margin-bottom: 14px;
