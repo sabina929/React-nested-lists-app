@@ -11,7 +11,9 @@ const Templates = () => {
     return (
         <>
             <section className='templates-container'>
-            
+                {
+                    templates.length === 0 ? <p>Nothing here...</p> : null
+                }
                 {
                 templates.map(template=>{
                     const {templateID,templateName, inputValue, items} = template
@@ -19,7 +21,7 @@ const Templates = () => {
                         <Template key={templateID} inputValue={inputValue} inputID={templateID} templateName={templateName} saveTemplate={saveTemplate} removeTemplate={removeTemplate} items={items} handleChange={handleChange} addItem={addItem} checkToggle={checkToggle} editItem={editItem} removeItem={removeItem} unCheckAll={unCheckAll}/>
                     )
                 })
-            }
+                }
                 
             </section>
             {
