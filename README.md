@@ -11,9 +11,10 @@ You can create your own routines by using this app.
 ## ✨ Features
 
 - create a routine
-- add steps/to-dos
-- edit steps/to-dos
-- remove steps/to-dos
+- add steps
+- edit steps
+- remove steps
 - remove a routine
-- save a routine as a template
+- save a routine as a template in storage
 - create a routine from saved templates
+- remove saved templates from storage
