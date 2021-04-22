@@ -146,31 +146,35 @@ main.app{
         color: #f7f5ff;          
         text-align: center;        
         display: flex;
-        justify-content:center;
+        justify-content:space-between;
         align-items:center;
+        padding: 0 24px;
         font-size: .8rem;
         letter-spacing: .8px;
 
         &>div{
-          position: absolute;
-          top: 50%;
-          right: -10px;
-          transform: translate(-50%,-50%);
+          // position: absolute;
+          // top: 50%;
+          // right: -10px;
+          // transform: translate(-50%,-50%);
           display: flex;
           flex-direction: row;
           justify-content:space-between;
           align-items:center;
-          width: 60px;
+          // width: 60px;
+          width: auto;
 
           button{
             background-color: transparent;
             color: $white;
+            width: 14px;
             &:active{
               transform: scale(1);
             }
           }
           button.save-template{
             position: relative;
+            margin-right: 12px;
 
             &::before{
               position: absolute;
@@ -304,7 +308,8 @@ main.app{
         }
 
         .add-uncheck {
-          width: 16%;
+          // width: 16%;
+          width: 36px;
           height: 80px;
           display: flex;
           flex-direction: column;
