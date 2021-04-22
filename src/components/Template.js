@@ -12,7 +12,7 @@ const Template = ({handleChange, items, inputValue,inputID, templateName, addIte
             </div>
             <div className="template-body">
                 <form id={`${inputID}formid`} onSubmit={addItem}>
-                    <input type="text" id={`${inputID}inputid`} placeholder="enter smth..." name="task" required onChange={handleChange} value={inputValue}></input>
+                    <input type="text" id={`${inputID}inputid`} placeholder="enter a step..." name="task" required onChange={handleChange} value={inputValue}></input>
                     <div className="add-uncheck">
                         <div className="add-button">
                             <button type="submit">+</button>
