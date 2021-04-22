@@ -115,7 +115,8 @@ main.app{
         width: 8px;
     }
     &::-webkit-scrollbar-track {
-        background: #f7f5ff;
+        // background: #f7f5ff;
+        background: rgba(0, 60, 255, 0);
     }
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
@@ -374,7 +375,7 @@ main.app{
         }
         
         &::-webkit-scrollbar-track {
-            background: #ffffff;
+          background-color:rgba(0, 60, 255, 0);
         }
         
         &::-webkit-scrollbar-thumb {
@@ -743,7 +744,7 @@ main.app{
           }
           
           &::-webkit-scrollbar-track {
-              background: #ffffff;
+              background-color: rgba(0, 60, 255, 0);
           }
           
           &::-webkit-scrollbar-thumb {
