@@ -3,7 +3,7 @@ import {NestedListsContext} from '../context/NestedListsContext'
 
 const CreateTemplateModal = () => {
     
-    const {createTemplate, showModal, handleChangeRoutineName, routineName, savedTemplates, createFromSavedTemplate, deleteAllSavedTemplates} = useContext(NestedListsContext)
+    const {createTemplate, showModal, handleChangeRoutineName, routineName, savedTemplates, createFromSavedTemplate, removeSavedTemplate,deleteAllSavedTemplates} = useContext(NestedListsContext)
     return (
         <section className='modal-container'>        
             <article className='background' onClick={showModal}></article>
@@ -29,8 +29,11 @@ const CreateTemplateModal = () => {
                                     <li key={index} onClick={()=>createFromSavedTemplate(templateID)}>
                                         <p>{templateName}</p>
                                         <div>
-                                            <i className="far fa-check-square"></i>
-                                            {checkedItems.length}/{items.length}
+                                            <div>
+                                                <i className="far fa-check-square"></i>
+                                                {checkedItems.length}/{items.length}
+                                            </div>
+                                            <button><i className="fas fa-trash" onClick={(e)=>removeSavedTemplate(e, templateID)}></i></button>
                                         </div>
                                     </li>
                                 )

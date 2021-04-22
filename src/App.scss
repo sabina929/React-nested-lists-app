@@ -725,23 +725,51 @@ main.app{
               flex-direction: row;
               justify-content: space-between;
               align-items: center;
-              opacity: 0.6;
-              font-size: 14px;
-              width: 40px;
-              height: 16px;
-              i{
-                font-size: 15px;
+              div{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                opacity: 0.6;
+                font-size: 14px;
+                width: 40px;
+                height: 16px;
+                margin-right: 10px;
+                
+                i{
+                  font-size: 15px;
+                }
               }
-            }
-            
-
+              button{
+                background-color: transparent;
+                width: auto;
+                height: auto;
+                box-shadow: none;
+                border-radius: 0px;
+                padding: 0px 0px;
+                font-size: 15px;
+                
+                i{
+                    font-size: 15px;
+                  }
+                  
+                }
+              }
+              
+              
+              
             &:not(:last-child){
               margin-bottom: 10px;
             }
-
+            
             &:hover,&:focus{
               background-color: $blue2;
               color:#ffffff;
+              
+              div button{
+                font-size: 15px;
+                color: #ffffff;
+              }
             }
           }
         }
