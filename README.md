@@ -5,7 +5,7 @@ You can create your own routines by using this app.
 <br />
 
 <div align="center">
-    <img alt="Screenshot of Routine App" width="500px" src="https://user-images.githubusercontent.com/50209542/115738277-f6c17a80-a39d-11eb-9df1-da8acbc78dd4.PNG"/>
+    <img alt="Screenshot of Routine App" width="500px" src="https://user-images.githubusercontent.com/50209542/115778766-3309d080-a3c8-11eb-94dd-35bd8e31000d.PNG"/>
 </div>
 
 ## ✨ Features
